@@ -1,0 +1,107 @@
+{
+  "nav": { "home": "Beranda", "about": "Tentang", "skills": "Keahlian", "project": "Proyek", "contact": "Kontak" },
+  "hero": {
+    "badge": "Tersedia untuk Kerja",
+    "tagline": "Saya membangun hal-hal untuk web.",
+    "socialLabel": "Terhubung dengan saya",
+    "codePassion": "Membangun untuk web",
+
+    "greeting": "Hi, saya",
+    "role": "Full-Stack Web Developer",
+    "description": "Full-Stack Web Developer yang senang membangun antarmuka web yang responsif, ramah pengguna, dan menarik secara visual dengan kode yang rapi dan teknologi modern.",
+    "cta": "Lihat Project",
+    "ctaContact": "Hubungi Saya",
+    "ctaCV": "Unduh CV",
+    "techLabel": "Teknologi yang saya gunakan",
+    "statProjects": "Proyek",
+    "statSkills": "Keahlian"
+  },
+  "about": {
+    "label": "Tentang Saya",
+    "heading": "Membangun sistem yang rapi dari dasar",
+    "description": "Mahasiswa S1 Sistem Informasi di ITB STIKOM Bali, aktif membangun sistem full-stack web development. Fokus pada pengalaman pengguna yang bersih dan sistem yang terstruktur rapi, dari database sampai antarmuka.",
+    "location": "Lokasi",
+    "locationValue": "Bali, Indonesia",
+    "education": "Pendidikan",
+    "educationValue": "ITB STIKOM Bali — Sistem Informasi",
+    "focus": "Fokus",
+    "focusValue": "Full-Stack Web Development",
+    "statProjects": "Proyek Selesai",
+    "statSkills": "Keahlian Dikuasai"
+  },
+  "journey": {
+    "label": "Perjalanan Saya",
+    "heading": "Perjalanan Profesional Saya",
+    "items": [
+      {
+        "period": "2023 - 2027",
+        "title": "Mahasiswa Sistem Informasi",
+        "org": "ITB STIKOM Bali",
+        "desc": "Menempuh pendidikan S1 Sistem Informasi, fokus pada pengembangan web full-stack dari database sampai antarmuka."
+      },
+      {
+        "period": "Maret 2026 - Juli 2026",
+        "title": "Fullstack Developer (Magang)",
+        "org": "RSU Prima Medika",
+        "desc": "Magang sebagai fullstack developer, mengembangkan sistem manajemen pelatihan dan pendidikan (diklat) internal rumah sakit."
+      }
+    ]
+  },
+
+  "services": {
+    "label": "Yang Saya Kerjakan",
+    "heading": "Layanan yang Saya Tawarkan",
+    "cta": "Lihat Project",
+    "items": [
+      {
+        "title": "Full-Stack Web Development",
+        "desc": "Membangun sistem web lengkap dari database sampai antarmuka, pakai Laravel, React, dan Node.js."
+      },
+      {
+        "title": "Frontend Development",
+        "desc": "Antarmuka yang responsif dan interaktif dengan React JS dan Tailwind CSS, rapi di semua ukuran layar."
+      },
+      {
+        "title": "Backend & Database",
+        "desc": "API dan struktur data yang solid pakai Laravel atau Node.js, dengan MySQL sebagai database-nya."
+      },
+      {
+        "title": "UI/UX Design",
+        "desc": "Wireframe dan prototype di Figma sebelum masuk ke tahap coding, supaya alurnya jelas dari awal."
+      }
+    ]
+  },
+
+  "skills": {
+    "label": "Keahlian Saya",
+    "heading": "Teknologi yang Saya Kuasai",
+    "subtitle": "Tools dan teknologi yang dipakai sehari-hari"
+  },
+  "projects": {
+    "label": "Proyek Unggulan",
+    "heading": "Beberapa Karya Terbaru",
+    "subtitle": "Sistem yang sudah dibangun dari nol",
+    "techUsed": "Teknologi yang Digunakan",
+    "code": "Kode",
+    "liveDemo": "Demo Langsung"
+  },
+  "contact": {
+    "label": "Mari Bekerja Sama",
+    "heading": "Punya proyek dalam pikiran?",
+    "description": "Ada proyek, kolaborasi, atau sekadar mau ngobrol soal web development? Jangan ragu untuk menghubungi lewat form di samping atau langsung lewat kanal berikut.",
+    "formName": "Nama",
+    "formEmail": "Email",
+    "formMessage": "Pesan",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "success": "Pesan berhasil dikirim!",
+    "error": "Gagal mengirim pesan."
+  },
+  "footer": { "rights": "Seluruh hak cipta dilindungi.", "tagline": "Full-Stack Web Developer yang senang membangun sistem yang rapi, dari database sampai antarmuka.", "quickLinks": "Tautan Cepat", "contactLabel": "Kontak", "backToTop": "Kembali ke Atas" }
+}
+
+
+
+
+
+

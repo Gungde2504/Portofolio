@@ -1,0 +1,823 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1E3A8A;
+  --color-primary-light: #3B82F6;
+}
+
+html {
+  transition-property: color, background-color, border-color;
+  transition-duration: 300ms;
+}
+
+body {
+  color: #1E293B;
+  background: linear-gradient(180deg, #F4F6FB 0%, #E9EDF6 100%);
+  transition-property: color, background-color, border-color;
+  transition-duration: 300ms;
+}
+
+.dark body {
+  color: #F1F5F9;
+  background: radial-gradient(circle at 20% 0%, #16213E 0%, #0B1220 45%, #050810 100%);
+}
+
+/* ---------- Light mode: stronger neumorphism ---------- */
+.card-neu {
+  background: #F0F3FA;
+  border-radius: 1.5rem;
+  box-shadow: 10px 10px 24px rgba(163, 177, 198, 0.65), -10px -10px 24px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card-neu-inset {
+  background: #EEF1F8;
+  border-radius: 1.25rem;
+  box-shadow: inset 5px 5px 12px rgba(163, 177, 198, 0.55), inset -5px -5px 12px rgba(255, 255, 255, 0.9);
+}
+
+.dark .card-neu {
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+}
+
+.dark .card-neu-inset {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Dark mode: heavier liquid glass ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(100, 116, 139, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.navbar-glass {
+  background: rgba(244, 246, 251, 0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.dark .navbar-glass {
+  background: rgba(10, 15, 28, 0.5);
+  backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  box-shadow: 6px 6px 16px rgba(163, 177, 198, 0.55), -4px -4px 12px rgba(255, 255, 255, 0.7), 0 10px 25px -5px rgba(37, 99, 235, 0.45);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #112645, #27328E, #365AAB, #5994CD);
+  box-shadow: 6px 6px 16px rgba(163, 177, 198, 0.55), -4px -4px 12px rgba(255, 255, 255, 0.7), 0 14px 32px -6px rgba(54, 90, 171, 0.55);
+}
+
+.btn-outline {
+  border: 1.5px solid #2563EB;
+  color: #2563EB;
+}
+
+.dark .btn-outline {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #F1F5F9;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- Toggle ---------- */
+.toggle-pill {
+  background: #E2E8F0;
+  border-radius: 9999px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.dark .toggle-pill {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.45);
+}
+
+/* ---------- Gradient text ---------- */
+/* ---------- Badge pill (Available for work) ---------- */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.dot-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #22C55E;
+  box-shadow: 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+html, body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* ---------- Floating pill navbar ---------- */
+.navbar-float {
+  background: #F0F3FA;
+  border-radius: 9999px;
+  box-shadow: 8px 8px 20px rgba(163, 177, 198, 0.55), -8px -8px 20px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.dark .navbar-float {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Inset neumorphic well (for toggle tracks) ---------- */
+.well-neu {
+  background: #E8ECF5;
+  border-radius: 9999px;
+  box-shadow: inset 3px 3px 8px rgba(163, 177, 198, 0.6), inset -3px -3px 8px rgba(255, 255, 255, 0.85);
+}
+
+.dark .well-neu {
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: none;
+}
+
+
+/* ---------- Refined background (lighter, closer to reference) ---------- */
+body {
+  background: linear-gradient(180deg, #F8FAFD 0%, #EEF2F8 100%);
+}
+
+/* ---------- Logo badge: raised neumorphic circle with gradient + hover glow ---------- */
+.logo-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 5px 5px 12px rgba(163, 177, 198, 0.6), -5px -5px 12px rgba(255, 255, 255, 0.9), 0 0 0 rgba(59, 130, 246, 0);
+  transition: box-shadow 0.35s ease, transform 0.25s ease;
+}
+
+.logo-badge:hover {
+  box-shadow: 5px 5px 12px rgba(163, 177, 198, 0.6), -5px -5px 12px rgba(255, 255, 255, 0.9), 0 0 18px 4px rgba(59, 130, 246, 0.55);
+  transform: translateY(-1px);
+}
+
+.dark .logo-badge {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.dark .logo-badge:hover {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 20px 4px rgba(59, 130, 246, 0.6);
+}
+
+/* ---------- Nav link: neumorphic underline hover ---------- */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0.25rem;
+  transition: color 0.25s;
+}
+
+.nav-link:hover {
+  background: none;
+}
+
+.nav-link .nav-underline {
+  position: absolute;
+  left: 0.25rem;
+  right: 0.25rem;
+  bottom: 2px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+  box-shadow: 0 0 8px 1px rgba(59, 130, 246, 0.65);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-underline {
+  transform: scaleX(1);
+}
+
+/* ---------- Toggle knob active glow (theme toggle) ---------- */
+.toggle-knob-active {
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.65);
+  color: #fff;
+}
+
+
+/* ---------- Skill card: deeper neumorphism + hover glow ---------- */
+.skill-card {
+  background: #F1F4FA;
+  border-radius: 1.75rem;
+  box-shadow: 12px 12px 26px rgba(163, 177, 198, 0.6), -12px -12px 26px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  box-shadow: 12px 12px 26px rgba(163, 177, 198, 0.6), -12px -12px 26px rgba(255, 255, 255, 0.95), 0 0 0 3px rgba(59, 130, 246, 0.35), 0 0 24px 2px rgba(59, 130, 246, 0.35);
+}
+
+.dark .skill-card {
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+}
+
+.dark .skill-card:hover {
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.4), 0 0 28px 4px rgba(59, 130, 246, 0.35);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+
+/* ---------- Skill card v2: bold neumorphism, modern ---------- */
+.skill-card {
+  background: #EEF2FA;
+  border-radius: 1.75rem;
+  box-shadow: 16px 16px 34px rgba(148, 163, 184, 0.55), -16px -16px 34px rgba(255, 255, 255, 1), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  box-shadow: 20px 20px 40px rgba(148, 163, 184, 0.6), -20px -20px 40px rgba(255, 255, 255, 1), 0 0 0 3px rgba(59, 130, 246, 0.4), 0 0 36px 6px rgba(59, 130, 246, 0.45);
+}
+
+.dark .skill-card {
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.dark .skill-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(59, 130, 246, 0.45), 0 0 40px 6px rgba(59, 130, 246, 0.4);
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.skill-icon-well {
+  background: linear-gradient(145deg, #E3E9F5, #FBFCFF);
+  border-radius: 1.25rem;
+  box-shadow: inset 6px 6px 12px rgba(148, 163, 184, 0.5), inset -6px -6px 12px rgba(255, 255, 255, 0.95);
+}
+
+.dark .skill-icon-well {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.3), inset -2px -2px 6px rgba(255, 255, 255, 0.04);
+}
+
+.skill-pill {
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563EB;
+}
+
+.dark .skill-pill {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93C5FD;
+}
+
+
+/* =====================================================
+   DARK MODE OVERHAUL — flat background, deeper liquid glass, liquid hover shimmer
+   ===================================================== */
+
+.dark body {
+  background: linear-gradient(180deg, #0A0F1C 0%, #070B14 100%);
+}
+
+/* ---- Deeper liquid glass surfaces in dark mode ---- */
+.dark .card-neu,
+.dark .skill-card,
+.dark .glass,
+.dark .navbar-float,
+.dark .well-neu {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(64px) saturate(210%) brightness(1.06) contrast(1.02);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .card-neu-inset {
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Liquid shimmer: moving light blob inside glass on hover ---- */
+.dark .card-neu::after,
+.dark .skill-card::after,
+.dark .glass::after,
+.dark .navbar-float::after,
+.dark .well-neu::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle at 30% 30%, rgba(125, 175, 255, 0.4), rgba(125, 175, 255, 0) 55%);
+  opacity: 0;
+  transform: translate(0, 0) scale(0.9) rotate(0deg);
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.dark .card-neu:hover::after,
+.dark .skill-card:hover::after,
+.dark .glass:hover::after,
+.dark .navbar-float:hover::after,
+.dark .well-neu:hover::after {
+  opacity: 0;
+}
+
+@keyframes liquidDrift {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(12%, 8%) scale(1.15) rotate(15deg); }
+  66% { transform: translate(-8%, 10%) scale(1.05) rotate(-10deg); }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* ---- Buttons: glassy tint in dark mode, still liquid on hover ---- */
+.dark .btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(59, 130, 246, 0.85));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.dark .btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.dark .btn-primary:hover::after {
+  opacity: 1;
+  animation: liquidDrift 2.4s ease-in-out infinite;
+}
+
+.dark .btn-outline {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark .btn-outline::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.dark .btn-outline:hover::after {
+  opacity: 1;
+  animation: liquidDrift 2.4s ease-in-out infinite;
+}
+
+/* ---- Per-skill color glow on hover (dark mode only) ---- */
+.dark .skill-card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--glow, rgba(59, 130, 246, 0.45)), 0 0 42px 6px var(--glow, rgba(59, 130, 246, 0.4));
+  border-color: var(--glow, rgba(59, 130, 246, 0.45));
+}
+
+
+/* =====================================================
+   Liquid glass v3 — tinted glass + top reflection line
+   ===================================================== */
+.dark .card-neu,
+.dark .skill-card,
+.dark .glass,
+.dark .navbar-float,
+.dark .well-neu {
+  background: linear-gradient(160deg, rgba(96, 165, 250, 0.16), rgba(147, 197, 253, 0.05), rgba(255, 255, 255, 0.03));
+}
+
+.dark .card-neu::before,
+.dark .skill-card::before,
+.dark .glass::before,
+.dark .navbar-float::before,
+.dark .well-neu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+body {
+  position: relative;
+}
+
+
+/* ---------- Vivid animated gradient text (Hero name) ---------- */
+.text-gradient {
+  background-image: linear-gradient(100deg, #112645, #27328E, #365AAB, #5994CD, #112645);
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(100deg, #1E3A8A, #3B82F6, #1E3A8A, #3B82F6);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* ---------- Code snippet card: neumorphic light / liquid glass dark ---------- */
+.code-card {
+  background: #F0F3FA;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 10px 10px 24px rgba(163, 177, 198, 0.6), -10px -10px 24px rgba(255, 255, 255, 0.9);
+}
+
+.dark .code-card {
+  background: linear-gradient(160deg, rgba(96, 165, 250, 0.16), rgba(147, 197, 253, 0.05), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(64px) saturate(210%) brightness(1.06) contrast(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+
+/* ---------- Logo badge v2: rounded-square code icon ---------- */
+.logo-badge {
+  border-radius: 0.7rem;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+
+/* ---------- Active nav link (scroll spy) ---------- */
+.nav-link.active .nav-underline {
+  transform: scaleX(1);
+}
+
+
+/* ---------- TRIAL: warm palette for Skills section (light mode only) ---------- */
+.skills-trial-panel {
+  background: linear-gradient(180deg, #FFF6DE 0%, #FDEEC7 100%);
+  border-radius: 2rem;
+  box-shadow: 14px 14px 32px rgba(198, 173, 110, 0.3), -14px -14px 32px rgba(255, 255, 255, 0.9);
+  padding: 3rem 1.5rem;
+}
+
+.dark .skills-trial-panel {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.skills-trial-underline {
+  background: linear-gradient(90deg, #1A2D54, #DD083D);
+}
+
+.dark .skills-trial-underline {
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+}
+
+.skills-trial-bar {
+  background: linear-gradient(90deg, #1A2D54, #DD083D);
+}
+
+.dark .skills-trial-bar {
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+}
+
+.skills-trial-percent {
+  color: #1E3A8A;
+}
+
+.dark .skills-trial-percent {
+  color: #93C5FD;
+}
+
+
+/* ---------- TRIAL v2: 3-color gradient (cream -> navy -> cherry) ---------- */
+.skills-trial-underline {
+  background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+}
+
+.dark .skills-trial-underline {
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+}
+
+.skills-trial-bar {
+  background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+}
+
+.dark .skills-trial-bar {
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+}
+
+.skills-trial-percent {
+  color: #1E3A8A;
+}
+
+.dark .skills-trial-percent {
+  color: #93C5FD;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Hero full-bleed photo fade ---------- */
+.hero-photo-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #F8FAFD 0%, #F8FAFD 12%, transparent 55%);
+  pointer-events: none;
+}
+
+.dark .hero-photo-fade {
+  background: linear-gradient(90deg, #0A0F1C 0%, #0A0F1C 12%, transparent 55%);
+}
+
+
+/* ---------- Orbit rings rotation ---------- */
+.orbit-spin {
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: orbitSpin 40s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+
+/* ---------- Orbit rings v3: true 3D tilt + spin ---------- */
+.orbit-perspective {
+  perspective: 1600px;
+}
+
+.orbit-3d {
+  animation: orbit3dSpin 40s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes orbit3dSpin {
+  from { transform: rotateX(50deg) rotateZ(18deg); }
+  to { transform: rotateX(50deg) rotateZ(378deg); }
+}
+
+
+
+
+
+/* ---------- Tech badges: orbit counter to ring rotation ---------- */
+.badge-orbit-outer {
+  animation-name: badgeOrbitCCW;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 20;
+}
+
+.badge-orbit-inner {
+  animation-name: badgeOrbitCW;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes badgeOrbitCCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes badgeOrbitCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* ---------- Extra glow for orbit rings in dark mode ---------- */
+.dark .orbit-glow {
+  filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.55));
+}
+
+
+
+
+
+/* ---------- Logo icon gradient: adapts per mode ---------- */
+:root {
+  --logo-grad-start: #1E3A8A;
+  --logo-grad-end: #3B82F6;
+}
+
+.dark {
+  --logo-grad-start: #60A5FA;
+  --logo-grad-end: #BFDBFE;
+}
+
+
+
+
+
+/* ---------- Journey icon well v2: fully rounded, neumorphic light / liquid glass dark ---------- */
+.journey-icon-well {
+  background: linear-gradient(145deg, #E3E9F5, #FBFCFF);
+  border-radius: 9999px;
+  box-shadow: inset 6px 6px 12px rgba(148, 163, 184, 0.5), inset -6px -6px 12px rgba(255, 255, 255, 0.95);
+}
+
+.dark .journey-icon-well {
+  background: linear-gradient(160deg, rgba(96, 165, 250, 0.16), rgba(147, 197, 253, 0.05), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(64px) saturate(210%) brightness(1.06) contrast(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+
+/* ---------- Journey progress line: blue gradient, glow in dark mode ---------- */
+.journey-line-fill {
+  background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+  border-radius: 9999px;
+}
+
+.dark .journey-line-fill {
+  box-shadow: 0 0 16px 3px rgba(96, 165, 250, 0.75), 0 0 6px rgba(191, 219, 254, 0.9);
+}
+
+
+
+/* ---------- Journey progress track: slim neumorphic inset (dedicated, not well-neu) ---------- */
+.journey-track {
+  background: #E8ECF5;
+  border-radius: 9999px;
+  box-shadow: inset 1px 1px 3px rgba(163, 177, 198, 0.6), inset -1px -1px 3px rgba(255, 255, 255, 0.85);
+}
+
+.dark .journey-track {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+
+
+/* ---------- Journey progress mask: flat cover that shrinks away, revealing static gradient underneath ---------- */
+.journey-mask {
+  background: #E8ECF5;
+}
+
+.dark .journey-mask {
+  background: rgba(10, 15, 28, 0.85);
+}
+
+
+
+
+
+
+/* ---------- Modern glass hover (dark mode): glow + lift, not liquid ripple ---------- */
+.dark .card-neu:hover,
+.dark .skill-card:hover,
+.dark .navbar-float:hover {
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5), 0 0 28px rgba(59, 130, 246, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dark .card-neu,
+.dark .skill-card,
+.dark .navbar-float {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+
+
+
+/* ---------- iOS-style liquid glass rim + static specular highlight (dark mode) ---------- */
+.dark .card-neu,
+.dark .skill-card,
+.dark .glass,
+.dark .navbar-float,
+.dark .well-neu {
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image:
+    radial-gradient(120% 100% at 15% -10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 45%),
+    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.01) 100%);
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    inset 0 -1px 0 rgba(255,255,255,0.05);
+}
+
+
+
+
+
+/* ---------- Modal card: calmer than skill-card (not hover-interactive) ---------- */
+.modal-card {
+  background: #EEF2FA;
+  border-radius: 1.75rem;
+  box-shadow: 10px 10px 24px rgba(148, 163, 184, 0.35), -10px -10px 24px rgba(255, 255, 255, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .modal-card {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(10, 15, 28, 0.32);
+  backdrop-filter: blur(80px) saturate(220%) brightness(1.08) contrast(1.03);
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image:
+    radial-gradient(120% 100% at 15% -10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 45%),
+    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.01) 100%);
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    inset 0 -1px 0 rgba(255,255,255,0.05);
+}
+
+
+

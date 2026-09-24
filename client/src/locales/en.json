@@ -1,0 +1,107 @@
+{
+  "nav": { "home": "Home", "about": "About", "skills": "Skills", "project": "Project", "contact": "Contact" },
+  "hero": {
+    "badge": "Available for Work",
+    "tagline": "I build things for the web.",
+    "socialLabel": "Connect with me",
+    "codePassion": "Building for the web",
+
+    "greeting": "Hi, I'm",
+    "role": "Full-Stack Web Developer",
+    "description": "Full-Stack Web Developer passionate about crafting responsive, user-friendly, and visually engaging web interfaces using clean code and modern technologies.",
+    "cta": "View Projects",
+    "ctaContact": "Contact Me",
+    "ctaCV": "Download CV",
+    "techLabel": "Technologies I work with",
+    "statProjects": "Projects",
+    "statSkills": "Skills"
+  },
+  "about": {
+    "label": "About Me",
+    "heading": "Building clean systems from the ground up",
+    "description": "Information Systems student at ITB STIKOM Bali, actively building full-stack web systems. Focused on clean user experience and well-structured systems, from database to interface.",
+    "location": "Location",
+    "locationValue": "Bali, Indonesia",
+    "education": "Education",
+    "educationValue": "ITB STIKOM Bali — Information Systems",
+    "focus": "Focus",
+    "focusValue": "Full-Stack Web Development",
+    "statProjects": "Projects Done",
+    "statSkills": "Skills Mastered"
+  },
+  "journey": {
+    "label": "My Journey",
+    "heading": "My Professional Journey",
+    "items": [
+      {
+        "period": "2023 - 2027",
+        "title": "Information Systems Student",
+        "org": "ITB STIKOM Bali",
+        "desc": "Pursuing a Bachelor's degree in Information Systems, focused on full-stack web development from database to interface."
+      },
+      {
+        "period": "March 2026 - July 2026",
+        "title": "Fullstack Developer (Intern)",
+        "org": "RSU Prima Medika",
+        "desc": "Interned as a fullstack developer, building the hospital's internal training and education management system."
+      }
+    ]
+  },
+
+  "services": {
+    "label": "What I Do",
+    "heading": "Services I Offer",
+    "cta": "View Projects",
+    "items": [
+      {
+        "title": "Full-Stack Web Development",
+        "desc": "Building complete web systems from database to interface, using Laravel, React, and Node.js."
+      },
+      {
+        "title": "Frontend Development",
+        "desc": "Responsive, interactive interfaces with React JS and Tailwind CSS, clean across every screen size."
+      },
+      {
+        "title": "Backend & Database",
+        "desc": "Solid APIs and data structures using Laravel or Node.js, with MySQL as the database."
+      },
+      {
+        "title": "UI/UX Design",
+        "desc": "Wireframes and prototypes in Figma before moving into code, so the flow is clear from the start."
+      }
+    ]
+  },
+
+  "skills": {
+    "label": "My Skills",
+    "heading": "Technologies I Master",
+    "subtitle": "Tools and technologies I use every day"
+  },
+  "projects": {
+    "label": "Featured Projects",
+    "heading": "Some of My Recent Work",
+    "subtitle": "Systems built from the ground up",
+    "techUsed": "Technologies Used",
+    "code": "Code",
+    "liveDemo": "Live Demo"
+  },
+  "contact": {
+    "label": "Let's Work Together",
+    "heading": "Have a project in mind?",
+    "description": "Have a project, collaboration idea, or just want to talk about web development? Feel free to reach out through the form or the channels below.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message."
+  },
+  "footer": { "rights": "All rights reserved.", "tagline": "Full-Stack Web Developer who enjoys building clean systems, from database to interface.", "quickLinks": "Quick Links", "contactLabel": "Contact", "backToTop": "Back to Top" }
+}
+
+
+
+
+
+
