@@ -27,8 +27,9 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: email,
+      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: `Pesan baru dari ${name} (Portofolio)`,
       text: message,
     });
@@ -39,3 +40,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ message: "Gagal mengirim pesan" });
   }
 }
+
