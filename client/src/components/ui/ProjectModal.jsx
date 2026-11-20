@@ -61,6 +61,7 @@ function Gallery({ images, fallback, title }) {
       >
         <AnimatePresence mode="wait">
           <motion.img
+            decoding="async"
             key={index}
             src={slides[index]}
             alt={`${title} ${index + 1}`}

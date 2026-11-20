@@ -1,5 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
+const orbBase =
+  "absolute rounded-full will-change-transform bg-[radial-gradient(circle,var(--orb)_0%,transparent_70%)]";
+
 export default function BackgroundOrbs() {
   const { scrollYProgress } = useScroll();
 
@@ -12,27 +15,19 @@ export default function BackgroundOrbs() {
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       <motion.div
         style={{ y: y1 }}
-        animate={{ x: [0, 60, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-blue-300/25 dark:bg-blue-500/25 blur-[110px]"
+        className={`${orbBase} -top-32 -left-32 w-[620px] h-[620px] [--orb:rgba(147,197,253,0.40)] dark:[--orb:rgba(59,130,246,0.32)]`}
       />
       <motion.div
         style={{ y: y2 }}
-        animate={{ x: [0, -50, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[35%] -right-32 w-[480px] h-[480px] rounded-full bg-purple-300/20 dark:bg-purple-500/20 blur-[130px]"
+        className={`${orbBase} top-[30%] -right-48 w-[680px] h-[680px] [--orb:rgba(216,180,254,0.34)] dark:[--orb:rgba(168,85,247,0.26)]`}
       />
       <motion.div
         style={{ y: y3 }}
-        animate={{ x: [0, 40, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[70%] left-[10%] w-[400px] h-[400px] rounded-full bg-cyan-300/20 dark:bg-cyan-400/20 blur-[110px]"
+        className={`${orbBase} top-[65%] left-[5%] w-[600px] h-[600px] [--orb:rgba(103,232,249,0.32)] dark:[--orb:rgba(34,211,238,0.24)]`}
       />
       <motion.div
         style={{ y: y4 }}
-        animate={{ x: [0, -30, 0] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-0 right-[15%] w-[350px] h-[350px] rounded-full bg-blue-200/25 dark:bg-blue-400/20 blur-[100px]"
+        className={`${orbBase} bottom-[-10%] right-[10%] w-[540px] h-[540px] [--orb:rgba(191,219,254,0.40)] dark:[--orb:rgba(96,165,250,0.26)]`}
       />
     </div>
   );

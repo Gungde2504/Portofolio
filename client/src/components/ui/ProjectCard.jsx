@@ -14,6 +14,8 @@ export default function ProjectCard({ project, index, onOpen }) {
       <div className="relative h-28 bg-gradient-to-br from-primary to-blue-400 flex items-center justify-center overflow-hidden">
         {project.banner && (
           <img
+            loading="lazy"
+            decoding="async"
             src={project.banner}
             alt={project.title}
             className="absolute inset-0 w-full h-full object-cover"

@@ -20,8 +20,8 @@ const DEFS_AND_GLOW = (
 const INNER_RINGS = (
   <>
     <circle cx="680" cy="680" r="320" stroke="url(#ringGrad)" strokeWidth="1" strokeDasharray="2 5" opacity="0.6" />
-    <circle cx="680" cy="680" r="230" stroke="url(#ringGrad)" strokeWidth="1.5" strokeDasharray="3 7" filter="url(#glow)" />
-    <circle cx="680" cy="680" r="140" stroke="url(#ringGrad)" strokeWidth="1.5" filter="url(#glow)" />
+    <circle cx="680" cy="680" r="230" stroke="url(#ringGrad)" strokeWidth="1.5" strokeDasharray="3 7" />
+    <circle cx="680" cy="680" r="140" stroke="url(#ringGrad)" strokeWidth="1.5" />
   </>
 );
 
@@ -30,16 +30,16 @@ const OUTER_RINGS = (
     <g style={{ transform: "translateZ(-45px) scale(0.92)", transformBox: "fill-box" }} opacity="0.3">
       <circle cx="680" cy="680" r="560" stroke="url(#ringGrad)" strokeWidth="1.5" />
     </g>
-    <circle cx="680" cy="680" r="650" stroke="url(#ringGrad)" strokeWidth="2.5" filter="url(#glow)" />
+    <circle cx="680" cy="680" r="650" stroke="url(#ringGrad)" strokeWidth="2.5" />
     <circle cx="680" cy="680" r="590" stroke="url(#ringGrad)" strokeWidth="1.5" strokeDasharray="1 6" opacity="0.6" />
     <circle cx="680" cy="680" r="560" stroke="url(#ringGrad)" strokeWidth="1.5" opacity="0.7" />
-    <circle cx="680" cy="680" r="410" stroke="url(#ringGrad)" strokeWidth="2" filter="url(#glow)" />
+    <circle cx="680" cy="680" r="410" stroke="url(#ringGrad)" strokeWidth="2" />
 
-    <circle cx="1180" cy="680" r="7" fill="currentColor" filter="url(#glow)" />
-    <circle cx="180" cy="680" r="5" fill="currentColor" filter="url(#glow)" opacity="0.8" />
-    <circle cx="680" cy="180" r="4" fill="currentColor" filter="url(#glow)" opacity="0.7" />
-    <circle cx="680" cy="1180" r="6" fill="currentColor" filter="url(#glow)" opacity="0.85" />
-    <circle cx="1140" cy="220" r="6" fill="currentColor" filter="url(#glow)" opacity="0.9" />
+    <circle cx="1180" cy="680" r="7" fill="currentColor" />
+    <circle cx="180" cy="680" r="5" fill="currentColor" opacity="0.8" />
+    <circle cx="680" cy="180" r="4" fill="currentColor" opacity="0.7" />
+    <circle cx="680" cy="1180" r="6" fill="currentColor" opacity="0.85" />
+    <circle cx="1140" cy="220" r="6" fill="currentColor" opacity="0.9" />
   </>
 );
 
